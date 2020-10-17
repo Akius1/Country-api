@@ -9,9 +9,13 @@ function Card({ flag, name, population, region, capital }) {
           <img src={flag} className="image" />
         </div>
         <div className="info">
-          <div className="name">{name}</div>
+          <div className="name">
+            <p>{name}</p>
+          </div>
           <p>Population: {population}</p>
-          <p>Region: {region}</p>
+          <div className="region">
+            <p>Region: {region}</p>
+          </div>
           <p>Capital: {capital}</p>
         </div>
       </div>
@@ -21,7 +25,7 @@ function Card({ flag, name, population, region, capital }) {
 const StyledCard = styled.div`
   .details {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-direction: column;
     margin: 1rem 1rem;
     .flag {
@@ -35,6 +39,14 @@ const StyledCard = styled.div`
     .info {
       display: flex;
       flex-direction: column;
+      background: var(--white-color);
+      padding: 2rem;
+      .name {
+        margin-bottom: 2rem;
+      }
+      .region {
+        margin: 1rem 0 1rem 0;
+      }
     }
   }
 `;

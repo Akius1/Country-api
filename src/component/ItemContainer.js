@@ -1,20 +1,37 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Card from "../component/Card";
+import Form from "./Form";
+import DropDownForm from "../component/DropDownForm";
 const ItemContainer = () => {
-  const [countries, setCountries] = useState([]);
+  let [countries, setCountries] = useState([]);
+  const [search, setSearch] = useState("");
+
+  function handleChange(e) {
+    return setSearch(e.target.value);
+  }
+
   const url = "https://restcountries.eu/rest/v2/all";
 
   useEffect(() => {
-    fetch(url)
+    window
+      .fetch(url)
       .then((res) => res.json())
       .then((datas) => {
-        console.log(datas[0]);
         setCountries(datas);
       });
   }, []);
+
+  countries = countries.filter((country) =>
+    country.name.toLowerCase().includes(search.toLowerCase())
+  );
   return (
     <StyledAll>
+      <div>
+        <Form handleOnChange={handleChange} />
+        <DropDownForm />
+      </div>
+
       <div className="body-children">
         {countries.map(({ flag, name, population, region, capital }, key) => (
           <Card
