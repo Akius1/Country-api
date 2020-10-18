@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
     <>
       <StyledHeader>
         <div className="header">
-          <div className="text">Where in the World</div>
+          <div className="text">Where in the World?</div>
           <div className="mode">Dark mode</div>
         </div>
       </StyledHeader>
@@ -17,14 +17,21 @@ const Layout = ({ children }) => {
   );
 };
 const StyledHeader = styled.div`
-  height: 3rem;
-  margin: 1.5rem 0;
-  background: var(--white-color);
-  box-shadow: 3px 3px 5px 6px var(--dark-gray);
+  box-shadow: 4px 6px 6px 5px var(--dark-gray);
   .header {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    height: 3rem;
+    background: var(--white-color);
+    align-items: center;
+    margin: auto;
+    .text {
+      margin: 0 5rem;
+    }
+    .mode {
+      margin-right: 5rem;
+    }
   }
 `;
 

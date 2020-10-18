@@ -6,7 +6,7 @@ function Card({ flag, name, population, region, capital }) {
     <StyledCard>
       <div className="details">
         <div className="flag">
-          <img src={flag} className="image" />
+          <img src={flag} alt={name} className="image" />
         </div>
         <div className="info">
           <div className="name">
