@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+//import { withRouter } from "react-router-dom";
 
 function Card({ flag, name, population, region, capital }) {
   return (

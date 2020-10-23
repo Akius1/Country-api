@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import Card from "../component/Card";
+import Card from "./Card";
 import Form from "./Form";
 import DropDownForm from "../component/DropDownForm";
 
@@ -29,14 +29,13 @@ const ItemContainer = () => {
   countries = countries.filter((country) =>
     country.name.toLowerCase().includes(search.toLowerCase())
   );
-    countries = countries.filter((country) => {
-        if (filters === "") {
-            return country;
-        } else {
-           return country.region.includes(filters);
-        }
-        
-    });
+  countries = countries.filter((country) => {
+    if (filters === "") {
+      return country;
+    } else {
+      return country.region.includes(filters);
+    }
+  });
   return (
     <>
       <StyledSearch>
@@ -76,17 +75,14 @@ const StyledAll = styled.div`
   .body-children {
     width: 100%;
     display: flex;
-    flex-wrap:wrap;
-    justify-content:space-between; 
-    .search{
-        display:flex;
-        width: 100%;
-        justify-content: space-evenly;
-        flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .search {
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+      flex-direction: row;
     }
-  } 
-    
   }
 `;
-
 export default ItemContainer;
