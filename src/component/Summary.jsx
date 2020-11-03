@@ -1,13 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { withRouter } from "react-router-dom";
 
-function Card({ flag, name, population, region, capital, history }) {
-  //let cardRef = useRef(null);
-
+function Summary({ flag, name, population, region, capital, subregion,topLevelDomain,currencies,languages, borders}) {
   return (
     <StyledCard>
-      <div className="details" onClick={ ()=> history.push(`/${name}`) }  >
+      <div className="details" >
         <div className="flag">
           <img src={flag} alt={name} className="image" />
         </div>
@@ -19,8 +16,28 @@ function Card({ flag, name, population, region, capital, history }) {
           <div className="region">
             <p>Region: {region}</p>
           </div>
+        <div className="subregion">
+            <p>Subregion: {subregion}</p>
+          </div>
           <p>Capital: {capital}</p>
         </div>
+        <div className="summary">
+        <p>
+            {" "}
+            <b>Top Level Domain :</b> {topLevelDomain}
+        </p>
+        <p>
+            {" "}
+            <b>Currency:</b> {currencies}
+        </p>
+        <p>
+            {" "}
+            <b>Languages:</b>{languages}
+        </p>
+        </div>
+        <div className="borders">
+            <b>Border Countries:</b>{borders}    
+        </div>      
       </div>
     </StyledCard>
   );
@@ -53,4 +70,4 @@ const StyledCard = styled.div`
     }
   }
 `;
-export default withRouter(Card);
+export default Summary;

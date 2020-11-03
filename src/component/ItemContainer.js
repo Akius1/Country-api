@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, } from "react";
 import styled from "styled-components";
 import Card from "./Card";
 import Form from "./Form";
@@ -16,6 +16,7 @@ const ItemContainer = () => {
     console.log(e.target.value);
     return setFilter(e.target.value);
   }
+
   const url = "https://restcountries.eu/rest/v2/all";
   useEffect(() => {
     window
@@ -55,7 +56,8 @@ const ItemContainer = () => {
               population={population}
               region={region}
               capital={capital}
-            />
+              
+              />
           ))}
         </div>
       </StyledAll>
